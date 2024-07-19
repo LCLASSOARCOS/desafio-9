@@ -1,0 +1,25 @@
+
+<h1>Mi Perfil</h1>
+
+
+<div class="profile-card">
+
+    <div class="form-container">
+        <div class="profile-info">
+            <p><strong>Nombre:</strong> {{this.user.first_name}}</p>
+            <p><strong>Apellido:</strong> {{this.user.last_name}}</p>
+            <p><strong>Email:</strong> {{this.user.email}}</p>
+            <p><strong>Edad:</strong> {{this.user.age}}</p>
+        </div>
+         <form action="/api/users/logout" method="POST">
+    <button class="btn btn-success"type="submit">Logout</button>
+  </form>
+    {{#if this.isAdmin}}
+    <a class="button" href="/realtimeproducts">Modificar Productos</a>
+  {{else}}
+  <p><strong>Cart ID:</strong> <a href="/api/carts/{{user.cart}}">{{user.cart}}</a></p>
+    <a class="button" href="/chat">Chat en vivo</a>
+    <a class="button" href="/products">Tienda</a>
+  {{/if}}
+    </div>
+</div>
